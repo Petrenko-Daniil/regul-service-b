@@ -11,7 +11,7 @@ trait Cacheable
 
     protected function findCachedById(int $id): ?AbstractDTO
     {
-        return $this->cacheService->find(get_class($this->dto), $id);
+        return $this->cacheService->find(get_class($this->dtoClass), $id);
     }
 
     protected function updateCached(AbstractDTO $dto): void
