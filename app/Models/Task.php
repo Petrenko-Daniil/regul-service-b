@@ -14,11 +14,16 @@ class Task extends Model
         'title',
         'description',
         'status',
-        'user_id'
+        'user_id',
+        'category_id'
     ];
 
     protected $casts = [
         'status' => TaskStatus::class
+    ];
+
+    protected $attributes = [
+        'status' => TaskStatus::Created
     ];
 
     public function category(): BelongsTo
