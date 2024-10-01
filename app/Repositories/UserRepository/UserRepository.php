@@ -11,8 +11,8 @@ class UserRepository extends AbstractRepository
 {
     use Cacheable, ApiFetchable;
 
-    public string|AbstractDTO $dtoClass = UserDTO::class;
-    public string $apiUrl;
+    protected string|AbstractDTO $dtoClass = UserDTO::class;
+    protected string $apiUrl;
 
     public function __construct()
     {

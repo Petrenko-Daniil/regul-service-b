@@ -12,7 +12,7 @@ use Throwable;
 
 trait ApiFetchable
 {
-    public function fetchById(int $id): ?AbstractDTO
+    protected function fetchById(int $id): ?AbstractDTO
     {
         if (!property_exists($this, 'apiUrl'))
             throw new LogicException('apiUrl property must be set for ApiFetchable trait');

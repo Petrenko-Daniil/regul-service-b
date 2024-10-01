@@ -12,7 +12,7 @@ use App\Services\CacheService\Traits\Cacheable;
  */
 abstract class AbstractRepository
 {
-    public string|AbstractDTO $dtoClass;
+    protected string|AbstractDTO $dtoClass;
 
     public function findById(int $id, bool $useCache = true): ?AbstractDTO
     {
@@ -36,5 +36,5 @@ abstract class AbstractRepository
         return new static();
     }
 
-    abstract public function fetchById(int $id): ?AbstractDTO;
+    abstract protected function fetchById(int $id): ?AbstractDTO;
 }
