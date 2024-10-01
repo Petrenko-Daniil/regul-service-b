@@ -14,7 +14,8 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->foreignId('category_id')
                 ->index()
-                ->constrained('categories');
+                ->constrained('categories')
+                ->cascadeOnDelete();
             $table->string('status');
             $table->timestamps();
         });
