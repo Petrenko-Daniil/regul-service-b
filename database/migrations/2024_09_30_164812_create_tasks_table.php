@@ -12,7 +12,10 @@ return new class extends Migration {
             $table->string('title');
             $table->tinyText('description');
             $table->unsignedBigInteger('user_id');
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')
+                ->index()
+                ->constrained('categories')
+                ->cascadeOnDelete();
             $table->string('status');
             $table->timestamps();
         });
