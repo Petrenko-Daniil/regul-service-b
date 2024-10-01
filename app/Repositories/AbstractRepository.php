@@ -31,5 +31,10 @@ abstract class AbstractRepository
         return $dto;
     }
 
+    public static function getInstance(): static
+    {
+        return new static();
+    }
+
     abstract public function fetchById(int $id): ?AbstractDTO;
 }
