@@ -36,5 +36,5 @@ abstract class AbstractRepository
         return new static();
     }
 
-    abstract public function fetchById(int $id): ?AbstractDTO;
+    abstract protected function fetchById(int $id): ?AbstractDTO;
 }
